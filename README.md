@@ -14,7 +14,9 @@ A starter project for net art websites. Designed to speed up workflow without fo
 
 ## Getting Started
 
-The documentation is meant for beginner level technologists. Follow these steps to get the project up and running:
+The documentation is meant for beginner level technologists. If anything is unclear you can file an issue and I'll add more information. 
+
+Follow these steps to get the project up and running:
 
 1. Install nodeJS. https://nodejs.org/en/download/
 2. Clone or download this project.
