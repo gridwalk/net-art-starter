@@ -1,4 +1,3 @@
-// var fs           = require('fs')                       // file system, used to load the text content
 var http         = require('http')                    // node core module to serve data
 var gulp         = require('gulp')                    // gulp task runner
 var watch        = require('gulp-watch')              // watch for files that change
@@ -7,8 +6,6 @@ var autoprefixer = require('gulp-autoprefixer')       // applies CSS vendor pref
 var rename       = require('gulp-rename')             // renames files
 var livereload   = require('gulp-livereload')         // reload browser when files change
 var concat       = require('gulp-concat')             // concatenate scripts
-// var handlebars   = require('gulp-compile-handlebars') // compile handlebars templates
-
 var serveStatic  = require('serve-static')            // serves static files
 var finalhandler = require('finalhandler')            // standardizes server response
 var opn          = require('opn')                     // opens the browser when we gulp
@@ -29,7 +26,9 @@ var paths = {
 	dist:     './dist'
 }
 
-gulp.task('default', ['styles','scripts','images','html','serve','watch','livereload-listen','open'])
+// these tasks execute in order when you run gulp
+gulp.task('default', ['styles', 'scripts', 'images', 'html', 'serve',	'watch', 'livereload-listen',	'open'])
+
 
 /*
 
