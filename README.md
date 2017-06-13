@@ -7,8 +7,8 @@ A starter project for net art websites. Designed to speed up workflow without fo
 - Sass error notifications
 - CSS autoprefixer to help with browser support
 - JavaScript error notifications
-- JavaScript files are minified into one big JS file
-- Simple local server instance
+- All JavaScript files are minified into a single JS file
+- Simple automatic local server instance
 - Meta tags to make the project look nice on social media
 - JavaScript helper functions for randomization and chance
 
