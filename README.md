@@ -32,3 +32,7 @@ Follow these steps to get the project up and running:
  - `scss`: Write your css in `style.scss`, and you can also create and import other css/scss files. `reset.css` is included to clear out all the default styles from different browsers so you can start from scratch.
  
 Once the site is done, make sure to update the content of the meta Open Graph tags and replace img/poster.png with your own image so your site looks nice on social media.
+
+## How Does This Work?
+
+All the compiling, processing and watching is done using Gulp, with tasks defined in gulpfile.js. Gulp is invoked via the command line, and when you run it you'll see a log of every task that executes.
