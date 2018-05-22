@@ -102,7 +102,8 @@ gulp.task('lint',function(){
 	return gulp.src(paths.scripts.app)
 		.pipe(plumber())
 		.pipe(jshint({
-			'asi':true // allows missing semicolons
+			'asi':true, // allows missing semicolons
+			'sub':true  // allows bracket notation of array items
 		}))
 		.pipe(jshint.reporter('jshint-stylish'))
 		.pipe(notify(function (file) {  // Use gulp-notify as jshint reporter
