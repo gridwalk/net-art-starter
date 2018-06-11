@@ -25,3 +25,20 @@ function nodelistToArray(nl) {
   for(var i = nl.length; i--; arr.unshift(nl[i]));
   return arr;
 }
+
+function createEl(opt){
+  var _el = document.createElement(opt.type)
+  if( opt.innerHTML ) _el.innerHTML = opt.innerHTML
+  if( opt.class )     _el.setAttribute('class', opt.class)
+  if( opt.id )        _el.setAttribute('id', opt.id)
+
+  if(opt.attr){
+    Object.keys(opt.attr).forEach(function(key){
+      _el.setAttribute(key,opt.attr[key])
+    })  
+  }
+  
+  if( opt.parent ) document.querySelector(opt.parent).appendChild(_el)
+
+  return _el
+}
