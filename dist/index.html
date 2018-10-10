@@ -9,7 +9,7 @@
   <!-- Open Graph tags for social media -->
   <meta property="og:title" content="Project Title">
   <meta property="og:description" content="Project description">
-  <meta property="og:image" content="img/poster.jpg">
+  <meta property="og:image" content="http://project-url.com/img/poster.jpg">
   <meta property="og:url" content="http://project-url.com">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:site_name" content="Site Title">
@@ -18,15 +18,18 @@
 
 <body>
 
-  THE ART GOES HERE.
+  The art happens here.
 
-  <script src='main.js'></script>
+  <script src='lib.js'></script>
+  <script src='art.js'></script>
 
   <script>
-    // This is the LiveReload snippet that tells the page to refresh when you make a change.
-    // You can delete if before uploading your finished site.
-    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
-  ':35729/livereload.js?snipver=1"></' + 'script>')
+  	console.log('Project Title by Firstname Lastname, 20XX')
+  </script>
+
+  <script>
+    // This is the LiveReload snippet that tells the page to refresh when you make a change. Delete this script before uploading your finished site.    
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
   </script> 
 
 </body>

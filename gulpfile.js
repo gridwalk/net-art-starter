@@ -27,7 +27,7 @@ var paths = {
 }
 
 // these tasks execute in order when you run gulp
-gulp.task('default', ['styles', 'scripts', 'images', 'html', 'serve',	'watch', 'livereload-listen',	'open'])
+gulp.task('default', ['styles', 'scripts-lib', 'scripts-art', 'images', 'html', 'serve',	'watch', 'livereload-listen',	'open'])
 
 
 /*
@@ -86,12 +86,18 @@ gulp.task('styles', [], function(){
 
 ********************************************************/
 
-// compiles all JS files into one file
-// first concatenates js in vendor folder, then js in app folder
+// compiles all js into two files: lib.js and art.js
 
-gulp.task('scripts', ['lint'], function(){
-	return gulp.src([paths.scripts.vendor,paths.scripts.app])
-		.pipe(concat('main.js'))
+gulp.task('scripts-art', ['lint'], function(){
+	return gulp.src([paths.scripts.app])
+		.pipe(concat('art.js'))
+		.pipe(gulp.dest(paths.dist))
+		.pipe(livereload())
+})
+
+gulp.task('scripts-lib', function(){
+	return gulp.src([paths.scripts.vendor])
+		.pipe(concat('lib.js'))
 		.pipe(gulp.dest(paths.dist))
 		.pipe(livereload())
 })
@@ -220,8 +226,12 @@ gulp.task('watch',['serve'], function(){
 		gulp.start('styles')
 	})
 
-	watch([paths.scripts.app,paths.scripts.vendor],function(){
-		gulp.start('scripts')
+	watch([paths.scripts.app],function(){
+		gulp.start('scripts-art')
+	})
+
+	watch([paths.scripts.vendor],function(){
+		gulp.start('scripts-lib')
 	})
 
 	watch(paths.pages,function(){
